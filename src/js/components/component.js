@@ -16,6 +16,7 @@ import Components from './index'
 import Data from './data'
 import animate from '../common/animation'
 import Controls from './controls'
+import events from '../common/events'
 
 export default class Component extends Data {
   constructor(name, data = {}, render) {
@@ -192,7 +193,19 @@ export default class Component extends Data {
                   _this.remove()
                 }
               })
+              console.log('removed')
               //  @todo add onRemove to Events and Actions
+              // hacky way to know if something has been deleted
+              const evtData = {
+                entity: this,
+                dataPath: this.dataPath.replace(/\.+$/, ''),
+                // changePath: this.dataPath + path,
+                value: '',
+                // data,
+                // change: `${change.type}: ${change.desc}`,
+                src: this.dom,
+              }
+              events.formeoUpdated(evtData)
             },
           },
         }

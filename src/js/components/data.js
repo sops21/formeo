@@ -49,6 +49,7 @@ export default class Data {
       if (oldVal) {
         evtData.previousValue = oldVal
       }
+      // console.log('test')
       events.formeoUpdated(evtData)
     }
 

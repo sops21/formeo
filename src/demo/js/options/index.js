@@ -19,8 +19,9 @@ export const editorOptions = {
   controls,
   config,
   events: {
-    // onUpdate: console.log,
+    onUpdate: console.log,
     onSave: console.log,
+    // onUpdate: console.log
   },
   // svgSprite: `./${devPrefix}assets/img/formeo-sprite.svg`,
   // style: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css',
